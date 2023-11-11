@@ -13,7 +13,7 @@ PDB_DISABLE_WARNING_CLANG("-Wgnu-zero-variadic-macro-arguments")
 #ifdef _DEBUG
 #	define PDB_ASSERT(_condition, _msg, ...)			(_condition) ? (void)true : (PDB_LOG_ERROR(_msg, ##__VA_ARGS__), __debugbreak())
 #else
-#	define PDB_ASSERT(_condition, _msg, ...)			__noop((void)(_condition), (void)(_msg), ##__VA_ARGS__)
+#	define PDB_ASSERT(_condition, _msg, ...)			((void)0)
 #endif
 
 PDB_POP_WARNING_CLANG
